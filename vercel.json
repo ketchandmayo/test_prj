@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "functions": {
+    "api/*.php": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
+}
