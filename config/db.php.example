@@ -1,0 +1,19 @@
+<?php
+class Database {
+    private $host = "YOUR DB HOST";
+    private $db_name = "YOUR DB NAME";
+    private $username = "YOUR USERNAME";
+    private $password = "YOUR PASSWORD";
+    public $conn;
+
+    public function getConnection() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        } catch (PDOException $exception) {
+            echo "Connection error: " . $exception->getMessage();
+        }
+        return $this->conn;
+    }
+}

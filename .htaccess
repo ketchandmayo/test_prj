@@ -1,8 +1,6 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+RewriteEngine On
 
-    # Перенаправляем все запросы, кроме прямых обращений к файлам и папкам, на index.php
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php [QSA,L]
-</IfModule>
+# Перенаправляем все запросы, кроме прямых обращений к файлам и папкам, на index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ public/index.php [QSA,L]
